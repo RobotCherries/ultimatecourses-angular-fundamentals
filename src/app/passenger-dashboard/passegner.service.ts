@@ -21,7 +21,7 @@ export class PassengerService {
       .pipe(map((passengers: Passenger[]) => passengers));
   }
 
-  getPassenger(id: string): Observable<Passenger> {
+  getPassenger(id: number): Observable<Passenger> {
     return this.httpClient
       .get(`${this.apiBaseUrl}/passengers/${id}`)
       .pipe(map((passenger: Passenger) => passenger));

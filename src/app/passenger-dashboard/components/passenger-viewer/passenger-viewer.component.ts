@@ -1,8 +1,30 @@
-import { Component } from "@angular/core";
+import { HttpErrorResponse } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import Passenger from "../../models/passenger.model";
+import { PassengerService } from "../../passegner.service";
 
 @Component({
   selector: "app-passenger-viewer",
   templateUrl: "./passenger-viewer.component.html",
   styleUrls: ["./passenger-viewer.component.scss"]
 })
-export class PassengerViewerComponent {}
+export class PassengerViewerComponent implements OnInit {
+  passenger: Passenger;
+
+  constructor(private passengerService: PassengerService) {}
+
+  ngOnInit(): void {
+    this.passengerService.getPassenger(1);
+  }
+
+  getPassenger(id: number): void {
+    this.passengerService.getPassenger(id).subscribe({
+      next: (passenger: Passenger) => {
+        console.log(this.passenger);
+        this.passenger = passenger;
+      },
+      error: (error: HttpErrorResponse) => Observable.throw(error)
+    });
+  }
+}

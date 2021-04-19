@@ -10,10 +10,11 @@ import { PassengerDashboardComponent } from "./passenger-dashboard.component";
   imports: [BrowserModule, CommonModule],
   declarations: [
     PassengerDashboardComponent,
+    PassengerViewerComponent,
+
     PassengerCountComponent,
-    PassengerDetailComponent,
-    PassengerViewerComponent
+    PassengerDetailComponent
   ],
-  exports: [PassengerDashboardComponent]
+  exports: [PassengerDashboardComponent, PassengerViewerComponent]
 })
 export class PassengerDashboardModule {}
