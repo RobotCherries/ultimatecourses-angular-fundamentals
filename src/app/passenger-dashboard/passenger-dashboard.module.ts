@@ -1,4 +1,5 @@
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { PassengerCountComponent } from "./components/passenger-count/passenger-count.component";
@@ -7,14 +8,14 @@ import { PassengerViewerComponent } from "./components/passenger-viewer/passenge
 import { PassengerDashboardComponent } from "./passenger-dashboard.component";
 
 @NgModule({
-  imports: [BrowserModule, CommonModule],
+  imports: [BrowserModule, CommonModule, HttpClientModule],
   declarations: [
-    PassengerDashboardComponent,
     PassengerViewerComponent,
 
+    PassengerDashboardComponent,
     PassengerCountComponent,
     PassengerDetailComponent
   ],
-  exports: [PassengerDashboardComponent, PassengerViewerComponent]
+  exports: [PassengerViewerComponent]
 })
 export class PassengerDashboardModule {}

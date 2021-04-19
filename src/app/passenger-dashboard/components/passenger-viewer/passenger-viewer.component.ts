@@ -15,13 +15,12 @@ export class PassengerViewerComponent implements OnInit {
   constructor(private passengerService: PassengerService) {}
 
   ngOnInit(): void {
-    this.passengerService.getPassenger(1);
+    this.getPassenger(1);
   }
 
   getPassenger(id: number): void {
     this.passengerService.getPassenger(id).subscribe({
       next: (passenger: Passenger) => {
-        console.log(this.passenger);
         this.passenger = passenger;
       },
       error: (error: HttpErrorResponse) => Observable.throw(error)
