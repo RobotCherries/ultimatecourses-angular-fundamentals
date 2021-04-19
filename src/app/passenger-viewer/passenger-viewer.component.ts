@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import Passenger from "../../models/passenger.model";
-import { PassengerService } from "../../passegner.service";
+import Passenger from "../passenger-dashboard/models/passenger.model";
+import { PassengerService } from "../passenger-dashboard/passegner.service";
 
 @Component({
   selector: "app-passenger-viewer",
