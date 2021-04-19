@@ -1,0 +1,31 @@
+<fieldset>
+  <legend>#{{ passenger.id }}</legend>
+
+  <span class="status" [class.status--success]="passenger.isCheckedIn"></span>
+
+  <ng-container *ngIf="isEditable; else isEditableFalse">
+    <input type="text"
+      [value]="passenger.fullName"
+      #name
+      [disabled]="!isEditable"
+      (input)="onChange(name.value)" />
+  </ng-container>
+
+  <ng-template #isEditableFalse>
+    <span>{{ passenger.fullName }}</span>
+  </ng-template>
+
+  <small class="date">
+    {{ passenger.checkInDate ? (passenger.checkInDate | date: 'd MMMM y') :
+    'Not checked in' }}
+  </small>
+
+  <button class="ml-2" (click)="toggleEdit()">
+    {{ isEditable ? 'Done' : 'Edit' }}
+  </button>
+
+  <button class="ml-2" (click)="onRemove(passenger)">
+    remove
+  </button>
+</fieldset>
+<br>

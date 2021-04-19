@@ -1,0 +1,12 @@
+<div>
+  <app-passenger-count [passengers]="passengers"></app-passenger-count>
+  <ul>
+    <li *ngFor="let passenger of passengers | async">{{ passenger?.fullName }}</li>
+  </ul>
+
+  <ul class="seats">
+    <app-passenger-detail *ngFor="let passenger of passengers | async" [passenger]="passenger"
+      (edit)="editPassenger($event)" (remove)="removePassenger($event)">
+    </app-passenger-detail>
+  </ul>
+</div>

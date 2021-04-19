@@ -1,0 +1,30 @@
+$danger_color: #c0392b;
+$success_color: #2ecc71;
+$default_color: $danger_color;
+$status_size: 10px;
+
+// Block
+.status {
+  width: $status_size;
+  height: $status_size;
+  display: block;
+  margin: 8px 10px 00;
+  float: left;
+  border-radius: 50%;
+
+  background-color: $default_color;
+
+  // Modifiers
+  &--success {
+    background-color: $success_color;
+  }
+}
+
+.date {
+  color: #666;
+  float: right;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
