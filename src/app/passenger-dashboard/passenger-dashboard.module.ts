@@ -11,12 +11,12 @@ import { PassengerDashboardComponent } from "./passenger-dashboard.component";
 @NgModule({
   imports: [BrowserModule, CommonModule, HttpClientModule],
   declarations: [
-    PassengerViewerComponent,
-
     PassengerDashboardComponent,
     PassengerCountComponent,
     PassengerDetailComponent,
-    PassengerFormComponent
+    PassengerFormComponent,
+
+    PassengerViewerComponent
   ],
   exports: [PassengerViewerComponent]
 })
